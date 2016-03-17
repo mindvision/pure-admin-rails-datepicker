@@ -1,0 +1,122 @@
+// TODO: use the variables defined in the pure admin variables file
+
+$white: #fff;
+$text-color: #555;
+$text-muted: #aaa;
+$input-border: #ccc;
+$input-active: #4a9fc8;
+$link-color: #50a8d1;
+
+.rd-container {
+  border-color: $input-border;
+  box-shadow: 0 1px 5px 0 $input-border;
+  z-index: 100;
+}
+
+.rd-days {
+  margin-top: 0.25em;
+}
+
+.rd-day-head,
+.rd-day-body {
+  padding: 0.4em 0.6em;
+}
+
+.rd-day-head {
+  font-size: 0.8em;
+}
+
+.rd-day-body {
+  border: 1px solid $input-border;
+
+  &:hover {
+    background: $link-color;
+    color: $white;
+  }
+}
+
+.rd-day-prev-month,
+.rd-day-next-month {
+  color: $text-color;
+
+  &:hover {
+    color: $white;
+  }
+}
+
+.rd-day-disabled {
+  color: $text-muted;
+  background: lighten($input-border, 15%);
+
+  &:hover {
+    background: lighten($input-border, 15%);
+    color: $text-muted;
+    cursor: default;
+  }
+}
+
+.rd-day-selected {
+  background: darken($link-color, 5%);
+
+  &:hover {
+    background: darken($link-color, 5%);
+  }
+}
+
+.rd-month-label {
+  text-transform: uppercase;
+  line-height: 1.7em;
+}
+
+.rd-back,
+.rd-next {
+  border: 1px solid $input-border;
+  border-radius: 2px;
+  padding: 0.25em 0.5em;
+
+  &:before {
+    font-family: FontAwesome;
+    position: relative;
+    top: 1px;
+  }
+
+  &[disabled] {
+    color: $text-muted;
+  }
+}
+
+.rd-back {
+  &:before {
+    content: '\f053';
+    left: -1px;
+  }
+}
+
+.rd-next {
+  &:before {
+    content: '\f054';
+    right: -1px;
+  }
+}
+
+.rd-time-selected {
+  background: none;
+  border: 1px solid $input-border;
+  color: $text-color;
+
+  &:hover {
+    border-color: $link-color;
+  }
+}
+
+.rd-time-list {
+  border: 1px solid $input-border;
+  border-top: 0;
+}
+
+.rd-time-option {
+  &:hover {
+    background: $link-color;
+    color: $white;
+  }
+}
