@@ -1,6 +1,7 @@
 ##
 # Shared code for the :pure_date, :pure_time, and :pure_datetime inputs.
 class PureAbstractDateInput < AddonInput
+  include ActionView::Helpers::TagHelper
   self.default_options = { icon: 'fa-calendar' }
 
   ##
