@@ -1,3 +1,7 @@
+// NOTE: Sprockets automatically searches any immediate descendant of the vendor/assets folder
+// (eg: vendor/assets/*) so we simply need to require the JS file within the package.
+
+//= require date
 //= require_tree .
 
 if (!PureAdmin) {
@@ -7,8 +11,13 @@ if (!PureAdmin) {
 PureAdmin.inputs.datetime = {
   defaults: {
     dayFormat: 'D',
-    monthFormat: 'MMM',
+
+    // This is the format used as the header in the date pop-up.
+    monthFormat: 'MMM YYYY',
+
     yearFormat: 'YYYY',
+
+    // Consider Monday the start of the week
     weekStart: 1,
   },
 
@@ -104,6 +113,14 @@ PureAdmin.inputs.datetime = {
       options.dateValidator = rome.val.afterEq(afterEl);
     }
 
-    rome(input[0], options);
+    var cal = rome(input[0], options);
+
+    input.on('change', function() {
+      var parsedDate = Date.parse(this.value);
+
+      if (parsedDate) {
+        cal.setValue(rome.moment(parsedDate));
+      }
+    });
   }
 };

@@ -9,8 +9,8 @@ class PureAbstractDateInput < AddonInput
   # formats the value, and merges this with any other options.
   def input_html_options
     data = {}
-    # data[:min] = options[:min] if options[:min].present?
-    # data[:max] = options[:max] if options[:max].present?
+    data[:min] = options[:min] if options[:min].present?
+    data[:max] = options[:max] if options[:max].present?
     data[:before] = options[:before] if options[:before].present?
     data[:after] = options[:after] if options[:after].present?
 
