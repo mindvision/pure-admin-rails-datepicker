@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
   s.name        = 'pure-admin-rails-datetime'
   s.version     = PureAdmin::Rails::Datetime::VERSION
   s.authors     = ['Tobyn Dockerill']
-  s.email       = ['tobyn@mindvision.com.au']
+  s.email       = ['staff@mindvision.com.au']
   s.homepage    = ''
   s.summary     = 'An datetime input using rome.js and the rome-rails gem.'
   s.license     = 'MIT'
